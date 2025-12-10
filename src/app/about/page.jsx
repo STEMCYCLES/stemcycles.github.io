@@ -39,11 +39,20 @@ export default function AboutPage() {
       <AnimatedSection variant="default">
         <Container maxW="container.xl">
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={12} w="100%">
-            <VStack align="flex-start" spacing={4} justify="center">
+            <VStack
+              align="flex-start"
+              spacing={4}
+              justify="center"
+              order={{ base: 2, md: 1 }}
+            >
               <Heading as="h2" size="lg" color="accent.500">
                 Our Mission
               </Heading>
-              <Text color={textColor} fontSize="lg" textAlign="justify">
+              <Text
+                color={textColor}
+                fontSize="lg"
+                textAlign={{ base: "left", md: "justify" }}
+              >
                 STEMCYCLES is dedicated to empowering underrepresented youth
                 through hands-on STEM education and mentorship. We believe every
                 child deserves access to the tools, resources, and opportunities
@@ -51,7 +60,7 @@ export default function AboutPage() {
                 engineering, and mathematics.
               </Text>
             </VStack>
-            <Box display="flex" alignItems="center">
+            <Box display="flex" alignItems="center" order={{ base: 1, md: 2 }}>
               <Image
                 src="/images/about/build-season-2022-gearbox.PNG"
                 alt="STEMCYCLES Team Building"
@@ -70,7 +79,7 @@ export default function AboutPage() {
       <AnimatedSection variant="alt">
         <Container maxW="container.xl">
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={12} w="100%">
-            <Box display="flex" alignItems="center">
+            <Box display="flex" alignItems="center" order={{ base: 1, md: 1 }}>
               <Image
                 src="/images/about/drive-team-10312.jpeg"
                 alt="ByteForce Drive Team"
@@ -82,11 +91,20 @@ export default function AboutPage() {
                 fallbackSrc={driveTeamFallback}
               />
             </Box>
-            <VStack align="flex-start" spacing={4} justify="center">
+            <VStack
+              align="flex-start"
+              spacing={4}
+              justify="center"
+              order={{ base: 2, md: 2 }}
+            >
               <Heading as="h2" size="lg" color="accent.500">
                 Our Vision
               </Heading>
-              <Text color={textColor} fontSize="lg" textAlign="justify">
+              <Text
+                color={textColor}
+                fontSize="lg"
+                textAlign={{ base: "left", md: "justify" }}
+              >
                 We envision a world where all students, regardless of their
                 background, have equal access to quality STEM education and the
                 opportunity to pursue careers in fields that shape our future.

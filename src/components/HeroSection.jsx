@@ -7,6 +7,7 @@ import {
   VStack,
   IconButton,
   useColorModeValue,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { chakra } from "@chakra-ui/react";
@@ -24,15 +25,18 @@ const MotionBox = chakra(motion.div);
 const heroImages = [
   {
     src: "/images/hero/waco-winning-photo-2025.JPG",
-    position: "50% 20%", // Moved left (50% horizontal) and adjusted vertical
+    position: "65% 20%", // desktop/tablet
+    mobilePosition: "65% 20%", // nudge left on mobile
   },
   {
     src: "/images/hero/Waco-10312-driverstation.jpg",
-    position: "center 35%", // Centered
+    position: "50% 25%", // desktop/tablet
+    mobilePosition: "92% 35%", // nudge left on mobile
   },
   {
     src: "/images/hero/Waco-Awards-13011165.jpg",
-    position: "60% 5%", // Adjust to capture faces
+    position: "75% 5%", // Adjust to capture faces
+    mobilePosition: "60% 5%", // nudge left on mobile
   },
   {
     src: "/images/hero/state-robot-on-field.jpg",
@@ -43,6 +47,12 @@ const heroImages = [
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const currentBgPosition = useBreakpointValue({
+    base:
+      heroImages[currentImageIndex].mobilePosition ??
+      heroImages[currentImageIndex].position,
+    md: heroImages[currentImageIndex].position,
+  });
 
   // Auto-advance carousel every 5 seconds (unless paused)
   useEffect(() => {
@@ -84,7 +94,7 @@ export default function HeroSection() {
           }}
           bgImage={`url(${heroImages[currentImageIndex].src})`}
           bgSize="cover"
-          bgPosition={heroImages[currentImageIndex].position}
+          bgPosition={currentBgPosition}
           bgRepeat="no-repeat"
         />
       </AnimatePresence>

@@ -69,10 +69,11 @@ function InitiativeRow({
   const imageContent = (
     <Box
       flex={{ base: "none", md: 1 }}
+      order={{ base: 0, md: imageOnLeft ? 0 : 1 }}
       display="flex"
       justifyContent="center"
       alignItems="center"
-      p={8}
+      p={{ base: 4, md: 8 }}
     >
       <Image
         src={logoSrc}
@@ -86,10 +87,11 @@ function InitiativeRow({
   const textContent = (
     <VStack
       flex={{ base: "none", md: 1 }}
+      order={{ base: 1, md: imageOnLeft ? 1 : 0 }}
       align={{ base: "center", md: imageOnLeft ? "flex-start" : "flex-end" }}
       textAlign={{ base: "center", md: imageOnLeft ? "left" : "right" }}
-      spacing={4}
-      p={8}
+      spacing={{ base: 3, md: 4 }}
+      p={{ base: 4, md: 8 }}
     >
       <Heading as="h3" size="lg" color={headingColor}>
         {name}
@@ -154,7 +156,11 @@ export default function InitiativesSection() {
   const subtitleColor = useColorModeValue("text.mutedLight", "text.mutedDark");
 
   return (
-    <AnimatedSection id="initiatives" variant="default">
+    <AnimatedSection
+      id="initiatives"
+      variant="default"
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+    >
       <VStack spacing={8}>
         {/* Section Header */}
         <VStack spacing={4} textAlign="center" mb={8}>
@@ -174,7 +180,7 @@ export default function InitiativesSection() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.12 }}
         >
           {initiatives.map((initiative) => (
             <InitiativeRow
