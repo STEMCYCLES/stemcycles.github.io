@@ -23,7 +23,7 @@ const MotionBox = chakra(motion.div);
 // - vertical: 0% = top, 50% = center, 100% = bottom
 const heroImages = [
   {
-    src: "/images/hero/waco-winning-photo-2025.jpg",
+    src: "/images/hero/waco-winning-photo-2025.JPG",
     position: "50% 20%", // Moved left (50% horizontal) and adjusted vertical
   },
   {
