@@ -7,6 +7,7 @@ import {
   VStack,
   Image,
   Icon,
+  Box,
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
@@ -52,8 +53,14 @@ export default function AboutSection() {
   const bodyTextColor = useColorModeValue("text.mutedLight", "text.mutedDark");
 
   return (
-    <AnimatedSection id="about" variant="alt" py={{ base: 8, md: 16 }}>
-      <VStack spacing={12}>
+    <AnimatedSection
+      id="about"
+      variant="alt"
+      py={{ base: 12, md: 20 }}
+      position="relative"
+      overflow="hidden"
+    >
+      <VStack spacing={12} position="relative" zIndex={1}>
         {/* Section Header */}
         <VStack spacing={4} textAlign="center">
           <Image
@@ -62,9 +69,22 @@ export default function AboutSection() {
             h={80}
             fallbackSrc={logoFallback}
           />
-          <Heading as="h2" size="xl" color={headingColor}>
-            About STEMCYCLES
-          </Heading>
+          <VStack spacing={2}>
+            <Heading as="h2" size="xl" color={headingColor}>
+              About STEMCYCLES
+            </Heading>
+            <Box
+              as="div"
+              h="4px"
+              w="480px"
+              mx="auto"
+              bgImage="url(/images/styling/sc-three-stripes.png)"
+              bgSize="cover"
+              bgPosition="center"
+              bgRepeat="no-repeat"
+              borderRadius="2px"
+            />
+          </VStack>
         </VStack>
 
         {/* Three Columns with Stagger Animation */}

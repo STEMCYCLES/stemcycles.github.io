@@ -4,6 +4,7 @@ import { RiParentLine } from "react-icons/ri";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { GoSponsorTiers } from "react-icons/go";
 import {
+  Box,
   Button,
   Heading,
   Icon,
@@ -56,9 +57,22 @@ export default function GetInvolvedSection() {
       <VStack spacing={12}>
         {/* Section Header */}
         <VStack spacing={4} textAlign="center">
-          <Heading as="h2" size="xl" color={sectionHeadingColor}>
-            Get Involved
-          </Heading>
+          <VStack spacing={2}>
+            <Heading as="h2" size="xl" color={sectionHeadingColor}>
+              Get Involved
+            </Heading>
+            <Box
+              as="div"
+              h="4px"
+              w="200px"
+              mx="auto"
+              bgImage="url(/images/styling/sc-three-stripes.png)"
+              bgSize="cover"
+              bgPosition="center"
+              bgRepeat="no-repeat"
+              borderRadius="2px"
+            />
+          </VStack>
           <Text color={sectionSubTextColor} fontSize="lg" maxW="2xl">
             Join us in making a difference. There are many ways to support
             students, share your skills, and help expand access to STEM
